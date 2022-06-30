@@ -74,8 +74,9 @@ const ToDoApps = () => {
             <h2 className='text-2xl font-bold text-center p-5'> Added Tasks</h2>
             <div className="p-4">
                 {
-                    tasks.map(task =>
+                    tasks.map((task, index) =>
                         <SingleTask
+                            index={index}
                             task={task}
                             key={task._id}>
                         </SingleTask>)

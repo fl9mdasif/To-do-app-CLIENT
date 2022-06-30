@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SingleTask = ({ task }) => {
+const SingleTask = ({ task, index }) => {
     const navigate = useNavigate()
 
     const { _id, taskDetails } = task;
@@ -61,7 +61,7 @@ const SingleTask = ({ task }) => {
             <div className='flex justify-center'>
                 {/* <input onChange={() => CompletedTask(_id)} type="checkbox" name="checkbox" id="" /> */}
 
-                <li className='pl-2 list-none'>{task.taskDetails}</li>
+                <li className='pl-2 list-none'>{index + 1}. {task.taskDetails}</li>
                 <button onClick={() => CompletedTask(_id)} className='btn btn-xs rounded-xl  btn-primary '>+
                 </button>
                 <button onClick={() => deleteTask(_id)} className='btn btn-xs text- bg-red-800 '>Delete

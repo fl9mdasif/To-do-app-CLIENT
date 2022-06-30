@@ -15,8 +15,11 @@ function App() {
     <div className="bg-purple-900" >
       <Navbar></Navbar>
       <Routes>
-        <Route path="/" element={<Homepage />}></Route>
-        <Route path="/home" element={<Homepage />}></Route>
+        <Route path="/" element={
+          <PrivateAuth>
+            <Homepage />
+          </PrivateAuth>
+        }></Route>
         <Route path="/to-do-task" element={
           <PrivateAuth>
             <ToDoApps />
@@ -25,7 +28,8 @@ function App() {
         <Route path="/completed-task" element={
           <PrivateAuth>
             <CompletedTask />
-          </PrivateAuth>}></Route>
+          </PrivateAuth>}>
+        </Route>
         <Route path="/calendar" element={<Calender />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>

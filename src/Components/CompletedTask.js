@@ -8,11 +8,13 @@ const CompletedTask = () => {
             .then(results => setTasks(results))
     }, [])
     return (
-        <div>
+        <div className='text-center'>
             <h3>This is  completed task Route</h3>
-            {
-                completedTasks.map(cTask => <li>{cTask.taskDetails}</li>)
-            }
+            <div className='list-none'>
+                {
+                    completedTasks.map((cTask, index) => <li className="list none">{index + 1}. {cTask.taskDetails}</li>)
+                }
+            </div>
         </div>
     );
 };
