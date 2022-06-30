@@ -9,6 +9,7 @@ import SignUp from "./Components/Login/SignUp";
 import PrivateAuth from "./Components/Login/PrivateAuth";
 import { ToastContainer } from "react-toastify";
 import NotFound from "./Components/Shared/NotFound";
+import Footer from "./Components/Shared/Footer";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <ToastContainer />
+      <Footer />
     </div>
   );
 }

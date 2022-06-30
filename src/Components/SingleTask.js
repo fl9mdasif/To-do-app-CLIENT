@@ -62,7 +62,7 @@ const SingleTask = ({ task, index }) => {
                 {/* <input onChange={() => CompletedTask(_id)} type="checkbox" name="checkbox" id="" /> */}
 
                 <li className='pl-2 list-none'>{index + 1}. {task.taskDetails}</li>
-                <button onClick={() => CompletedTask(_id)} className='btn btn-xs rounded-xl  btn-primary '>+
+                <button onClick={() => CompletedTask(_id)} className='btn btn-xs rounded-xl  bg-green-800  '>+
                 </button>
                 <button onClick={() => deleteTask(_id)} className='btn btn-xs text- bg-red-800 '>Delete
                 </button>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Hero from './Hero';
 // import Calender from './Calender';
 // import CompletedTask from './CompletedTask';
 import ToDoApps from './ToDoApps';
@@ -7,7 +8,8 @@ import ToDoApps from './ToDoApps';
 const Homepage = () => {
     return (
         <div>
-            <h2>This is Homepage</h2>
+            {/* <h2>This is Homepage</h2> */}
+            <Hero />
             <ToDoApps />
             {/* <Calender></Calender>
             <CompletedTask></CompletedTask> */}
