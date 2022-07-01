@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const CompletedTask = () => {
     const [completedTasks, setTasks] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/completetasks')
+        fetch('https://thawing-beach-59024.herokuapp.com/completetasks')
             .then(res => res.json())
             .then(results => setTasks(results))
     }, [])

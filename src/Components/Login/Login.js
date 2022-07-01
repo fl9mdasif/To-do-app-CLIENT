@@ -55,9 +55,9 @@ const Login = () => {
             await sendPasswordResetEmail(email);
             toast('Sent email > inbox or Trash Bin ');
         }
-        else {
-            toast('please enter your email address');
-        }
+        // else {
+        //     toast('please enter your email address');
+        // }
     }
 
     return (
@@ -117,9 +117,9 @@ const Login = () => {
                         {signInError}
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
-                    <p>Forget Password?<button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
+                    <p className='text-head'>Forget Password?<button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
                     <ToastContainer />
-                    <p><small>New to To-Do-app <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
+                    <p className='text-head'><small>New to To-Do-app <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}

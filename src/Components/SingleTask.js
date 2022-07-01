@@ -14,7 +14,7 @@ const SingleTask = ({ task, index }) => {
         }
 
 
-        const url = `http://localhost:5000/completetasks`;
+        const url = `https://thawing-beach-59024.herokuapp.com/completetasks`;
         fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -31,7 +31,7 @@ const SingleTask = ({ task, index }) => {
 
     // const [allTasks, setTasks] = useState([])
     // useEffect(() => {
-    //     fetch('http://localhost:5000/tasks')
+    //     fetch('https://thawing-beach-59024.herokuapp.com/tasks')
     //         .then(res => res.json())
     //         .then(data => setTasks(data));
     // }, []);
@@ -41,7 +41,7 @@ const SingleTask = ({ task, index }) => {
     const deleteTask = (id) => {
         const proceed = window.confirm('Are you sure to delete product');
         if (proceed) {
-            const url = `http://localhost:5000/tasks/${id}`;
+            const url = `https://thawing-beach-59024.herokuapp.com/tasks/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -11,7 +11,7 @@ const ToDoApps = () => {
 
     const [tasks, setTasks] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/tasks')
+        fetch('https://thawing-beach-59024.herokuapp.com/tasks')
             .then(res => res.json())
             .then(results => setTasks(results))
     }, [])
@@ -25,7 +25,7 @@ const ToDoApps = () => {
         const task = {
             taskDetails: tasklist
         }
-        const url = `http://localhost:5000/tasks`;
+        const url = `https://thawing-beach-59024.herokuapp.com/tasks`;
         fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -63,7 +63,7 @@ const ToDoApps = () => {
                                 <label className="label">
                                     {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                                 </label>
-                                <input className='btn w-full max-w-xs text-head bg-base' type="submit" value="Add Task" />
+                                <input className='btn w-full max-w-xs text-head bg-base' type="submit" value="Add To Task" />
                                 <ToastContainer />
                             </div>
                         </form>
