@@ -26,7 +26,7 @@ const Navbar = () => {
             {
                 user ?
                     // <button onClick={handleSignOut} className="btn btn-primary text-white border-none shadow-md bg-gradient-to-r  from-secondary to-primary"> Sign Out</button>
-                    <button onClick={handleSignOut} className="btn btn-primary text-white border-none shadow-md bg-gradient-to-r  from-red-200 to-red-400"> Sign Out</button>
+                    <button onClick={handleSignOut} className="btn bg-head text-text border-none shadow-md bg-gradient-to-r  from-red-200 to-red-400"> Sign Out</button>
                     :
                     <li><Link to='login' >Login</Link></li>
             }
@@ -36,7 +36,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-base">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -47,7 +47,7 @@ const Navbar = () => {
 
                         </ul >
                     </div >
-                    <a href="/" className="btn btn-ghost normal-case text-xl" > To-Do App</a >
+                    <a href="/" className="bg-base pl-3 font-bold text-head normal-case text-xl" > To-Do App</a >
                 </div >
                 <div className="navbar-center hidden lg:flex" >
                     <ul className="menu menu-horizontal p-0" >

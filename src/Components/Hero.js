@@ -1,15 +1,23 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Hero = () => {
+    const navigate = useNavigate();
+    const onClick = (e) => {
+        navigate('/to-do-task')
+    }
     return (
         <div>
-            <div class="hero min-h-screen" style={{ backgroundImage: "url(https://image.shutterstock.com/image-vector/big-task-word-small-people-260nw-1429801826.jpg)" }}>
+            <div class="hero min-h-screen" style={{
+                backgroundImage: "url(https://toggl.com/blog/wp-content/uploads/2020/11/trello-vs-meistertask-940x563.jpg)"
+            }}>
                 <div class="hero-overlay bg-opacity-70"></div>
                 <div class="hero-content text-center text-neutral-content">
                     <div class="max-w-md">
-                        <h1 class="mb-5 text-white text-5xl font-bold">Hello there</h1>
-                        <p class="text-white mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button class="btn btn-primary">Get Started</button>
+                        <h1 class="mb-5 sm:text-xl text-white md:text-2xl lg:text-5xl font-bold">Welcome to TO-DO </h1>
+                        <p class="text-white mb-5">You can simply add your tasks by putting your data into the text field below.</p>
+                        <button onClick={onClick} class="btn btn-xs bg-base text-text">Get Started</button>
                     </div>
                 </div>
             </div>

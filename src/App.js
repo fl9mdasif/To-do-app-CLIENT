@@ -13,7 +13,7 @@ import Footer from "./Components/Shared/Footer";
 
 function App() {
   return (
-    <div className="bg-purple-900" >
+    <div className="bg-base text-text " >
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={

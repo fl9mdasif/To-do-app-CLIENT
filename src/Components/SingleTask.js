@@ -58,13 +58,13 @@ const SingleTask = ({ task, index }) => {
 
     return (
         <>
-            <div className='flex justify-center'>
+            <div className='flex justify-center text-text '>
                 {/* <input onChange={() => CompletedTask(_id)} type="checkbox" name="checkbox" id="" /> */}
 
-                <li className='pl-2 list-none'>{index + 1}. {task.taskDetails}</li>
-                <button onClick={() => CompletedTask(_id)} className='btn btn-xs rounded-xl  bg-green-800  '>+
+                <li className='pl-2 list-none'><span className='text-head'>{index + 1}.</span> {task.taskDetails}</li>
+                <button onClick={() => CompletedTask(_id)} className='text-text hover:bg-head btn btn-xs rounded-xl  bg-green  '>+
                 </button>
-                <button onClick={() => deleteTask(_id)} className='btn btn-xs text- bg-red-800 '>Delete
+                <button onClick={() => deleteTask(_id)} className='text-text hover:bg-head  btn btn-xs text- bg-red '>Delete
                 </button>
             </div>
         </>
