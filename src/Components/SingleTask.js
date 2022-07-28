@@ -83,11 +83,11 @@ const SingleTask = ({ task, index }) => {
 
 
     return (
-        <tr>
-            <td>{index + 1}</td>
-            <td>{task.taskDetails}</td>
+        <tr className="">
+            <td className=""> {index + 1}</td>
+            <td className=''>{task.taskDetails}</td>
             <td>{task.taskDate}</td>
-            <td>
+            <td className=" flex flex-wrap">
                 <button onClick={() => updateTask(_id)} className='text-text hover:bg-head rounded-xl pl-1  b-green  '><box-icon color='blue' type='solid' size='' name='pencil'></box-icon></button>
                 <button onClick={() => CompletedTask(_id)} className='text-text hover:bg-head  rounded-xl pl-1  b-green  '><box-icon type='solid' color='green' name='check-circle'></box-icon>
                 </button>

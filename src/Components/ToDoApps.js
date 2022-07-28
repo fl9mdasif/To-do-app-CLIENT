@@ -134,11 +134,12 @@ const ToDoApps = () => {
 
                 </div>
                 <h2 className='text-2xl font-bold text-head  text-center p-5'> Added Tasks</h2>
-                <div className="p-4">
-                    <table class="table border w-full">
+
+                <div className="  ">
+                    <table class="table w-full ">
                         <thead>
                             <tr className='' >
-                                <th>No.</th>
+                                <th></th>
                                 <th>Tasks</th>
                                 <th>Schedule</th>
                                 <th>Manage</th>
@@ -154,9 +155,7 @@ const ToDoApps = () => {
                                         task={task}
                                         key={task._id}>
                                     </SingleTask>
-
                                 )
-
                             }
 
                         </tbody >
