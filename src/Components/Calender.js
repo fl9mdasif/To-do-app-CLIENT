@@ -6,6 +6,7 @@ import 'react-day-picker/dist/style.css';
 const Calender = () => {
     const [selected, setSelected] = useState(new Date());
     let footer = <p>Please pick a day.</p>;
+
     if (selected) {
         footer = <p>You picked {format(selected, 'PP')}.</p>;
     }
@@ -24,5 +25,6 @@ const Calender = () => {
         </div>
     );
 };
+
 
 export default Calender;

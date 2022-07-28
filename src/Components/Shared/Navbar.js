@@ -10,6 +10,8 @@ const Navbar = () => {
     const handleSignOut = () => {
         signOut(auth)
     }
+    const photoUrl = user?.reloadUserInfo?.photoUrl;
+    console.log(photoUrl)
 
     const menuItems =
         <>
@@ -24,7 +26,17 @@ const Navbar = () => {
             {
                 user ?
                     // <button onClick={handleSignOut} className="btn btn-primary text-white border-none shadow-md bg-gradient-to-r  from-secondary to-primary"> Sign Out</button>
-                    <button onClick={handleSignOut} className="btn bg-head text-text border-none shadow-md bg-gradient-to-r  from-red-200 to-red-400"> Sign Out</button>
+                    <span onClick={handleSignOut} className="flex items-center text-text ">
+
+                        Sign Out
+                        <span> <img style={{
+                            height: '40px',
+                            width: 'auto',
+                            objectFit: 'contain',
+                            borderRadius: '50%',
+                            paddingLeft: '10px'
+                        }} src={photoUrl} alt="" />  </span>
+                    </span>
                     :
                     <li><Link to='login' >Login</Link></li>
             }

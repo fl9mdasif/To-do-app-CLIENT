@@ -18,7 +18,7 @@ const Update = () => {
             .then(res => res.json())
             .then(data => {
                 setUpdateTask(data)
-                console.log(data);
+                // console.log(data);
             })
     }, [taskID])
 
@@ -45,7 +45,9 @@ const Update = () => {
             },
         })
             .then((response) => response.json())
-            .then((json) => console.log(json));
+            .then((json) =>
+                console.log(json)
+            );
         navigate('/')
     }
 
@@ -63,7 +65,7 @@ const Update = () => {
             {/* <h1>update : {taskID}</h1>
             <p>{updateTask.taskDetails} h</p> */}
             <div className="py-10 font-bold text-center text-primary sm:text-2xl md:text-4xl lg:text-5xl">Update User</div>
-            <div className='flex  justify-evenly'>
+            <div className='flex flex-wrap justify-evenly'>
                 <div className="flex text-text justify-center">
                     <DayPicker
                         mode="single"
@@ -73,7 +75,7 @@ const Update = () => {
                     />
                 </div>
                 <div>
-                    <div className='flex  justify-center items-center'>
+                    <div className='flex  justify-center  items-center'>
                         <div className="card w-96 bg-primary shadow-xl">
                             <div className="card-body pb-9">
                                 <form onSubmit={handleSubmit(onSubmit)}>

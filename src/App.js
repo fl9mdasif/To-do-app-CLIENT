@@ -37,7 +37,7 @@ function App() {
             <CompletedTask />
           </PrivateAuth>}>
         </Route>
-        <Route path="/calendar" element={<Calender />}></Route>
+        {/* <Route path="/calendar" element={<Calender />}></Route> */}
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="*" element={<NotFound />}></Route>
