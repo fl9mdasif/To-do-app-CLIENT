@@ -8,11 +8,11 @@ const CompletedTask = () => {
             .then(results => setTasks(results))
     }, [])
     return (
-        <div className='text-white text-center'>
+        <div className='text- text-center'>
             <h3 className='text-2xl font-bold text-head  text-center p-5'>All my completed task </h3>
             <div className='list-none'>
                 {
-                    completedTasks.map((cTask, index) => <li className="list none"><span className='text-head'>{index + 1}.</span> {cTask.taskDetails}</li>)
+                    completedTasks.map((cTask, index) => <li className="list none"><span className='text-green'>{index + 1}.</span> {cTask.taskDetails}</li>)
                 }
             </div>
         </div>

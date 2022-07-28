@@ -29,13 +29,20 @@ const SingleTask = ({ task, index }) => {
     };
 
 
-    // const [allTasks, setTasks] = useState([])
-    // useEffect(() => {
-    //     fetch('https://thawing-beach-59024.herokuapp.com/tasks')
-    //         .then(res => res.json())
-    //         .then(data => setTasks(data));
-    // }, []);
 
+    const updateTask = (id) => {
+        const proceed = window.confirm('Are you sure to delete product');
+        if (proceed) {
+            const url = `http://localhost:5000/tasks${id}`;
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data)
+                })
+
+            navigate(`/to-do-task/${id}`)
+        }
+    };
 
 
     const deleteTask = (id) => {
@@ -47,7 +54,9 @@ const SingleTask = ({ task, index }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                    // console.log(data)
+                    window.location.reload();
+
                     // allTasks(data)
                     // toast('product deleted from my order');
                 })
@@ -62,9 +71,10 @@ const SingleTask = ({ task, index }) => {
                 {/* <input onChange={() => CompletedTask(_id)} type="checkbox" name="checkbox" id="" /> */}
 
                 <li className='pl-2 list-none'><span className='text-head'>{index + 1}.</span> {task.taskDetails}</li>
-                <button onClick={() => CompletedTask(_id)} className='text-text hover:bg-head btn btn-xs rounded-xl  bg-green  '>+
+                <button onClick={() => updateTask(_id)} className='text-text hover:bg-head rounded-xl pl-1  b-green  '><box-icon color='white' type='solid' size='' name='pencil'></box-icon></button>
+                <button onClick={() => CompletedTask(_id)} className='text-text hover:bg-head  rounded-xl pl-1  b-green  '><box-icon type='solid' color='green' name='check-circle'></box-icon>
                 </button>
-                <button onClick={() => deleteTask(_id)} className='text-text hover:bg-head  btn btn-xs text- bg-red '>Delete
+                <button onClick={() => deleteTask(_id)} className='text-text hover:bg-head  pl-1 text- bred '><box-icon color='red' name='trash-alt'></box-icon>
                 </button>
             </div>
         </>

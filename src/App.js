@@ -10,10 +10,13 @@ import PrivateAuth from "./Components/Login/PrivateAuth";
 import { ToastContainer } from "react-toastify";
 import NotFound from "./Components/Shared/NotFound";
 import Footer from "./Components/Shared/Footer";
+import UpdateTodo from "./Components/UpdateTodo";
+import 'boxicons'
+
 
 function App() {
   return (
-    <div className="bg-base text-text " >
+    <div className="bg-base " >
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={
@@ -26,6 +29,9 @@ function App() {
             <ToDoApps />
           </PrivateAuth>
         }></Route>
+        {/* //update user */}
+        <Route path="/to-do-task/:taskID" element={<UpdateTodo />}></Route>
+
         <Route path="/completed-task" element={
           <PrivateAuth>
             <CompletedTask />
