@@ -66,18 +66,19 @@ const SingleTask = ({ task, index }) => {
 
 
     return (
-        <>
-            <div className='flex justify-center text-text '>
-                {/* <input onChange={() => CompletedTask(_id)} type="checkbox" name="checkbox" id="" /> */}
-
-                <li className='pl-2 list-none'><span className='text-head'>{index + 1}.</span> {task.taskDetails}</li>
-                <button onClick={() => updateTask(_id)} className='text-text hover:bg-head rounded-xl pl-1  b-green  '><box-icon color='white' type='solid' size='' name='pencil'></box-icon></button>
+        <tr>
+            <td>{index + 1}</td>
+            <td>{task.taskDetails}</td>
+            <td>{task.taskDate}</td>
+            <td>
+                <button onClick={() => updateTask(_id)} className='text-text hover:bg-head rounded-xl pl-1  b-green  '><box-icon color='blue' type='solid' size='' name='pencil'></box-icon></button>
                 <button onClick={() => CompletedTask(_id)} className='text-text hover:bg-head  rounded-xl pl-1  b-green  '><box-icon type='solid' color='green' name='check-circle'></box-icon>
                 </button>
                 <button onClick={() => deleteTask(_id)} className='text-text hover:bg-head  pl-1 text- bred '><box-icon color='red' name='trash-alt'></box-icon>
                 </button>
-            </div>
-        </>
+            </td>
+
+        </tr>
 
     );
 };

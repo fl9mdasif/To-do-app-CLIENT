@@ -22,14 +22,15 @@ const ToDoApps = () => {
 
     const onSubmit = event => {
 
-        const tasklist = event.tasklist;
-        console.log(tasklist);
+        const { tasklist, taskDate } = event;
+        console.log(event)
         reset();
 
         const task = {
-            taskDetails: tasklist
+            taskDetails: tasklist,
+            taskDate: taskDate
         }
-        const url = `https://thawing-beach-59024.herokuapp.com/tasks`;
+        const url = `http://localhost:5000/tasks`;
         fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -115,14 +116,32 @@ const ToDoApps = () => {
                 </div>
                 <h2 className='text-2xl font-bold text-head  text-center p-5'> Added Tasks</h2>
                 <div className="p-4">
-                    {
-                        tasks.map((task, index) =>
-                            <SingleTask
-                                index={index}
-                                task={task}
-                                key={task._id}>
-                            </SingleTask>)
-                    }
+                    <table class="table border w-full">
+                        <thead>
+                            <tr className='' >
+                                <th>No.</th>
+                                <th>Tasks</th>
+                                <th>Schedule</th>
+                                <th>Manage</th>
+                            </tr>
+
+                        </thead>
+                        <tbody >
+
+                            {
+                                tasks.map((task, index) =>
+                                    <SingleTask
+                                        index={index}
+                                        task={task}
+                                        key={task._id}>
+                                    </SingleTask>
+
+                                )
+
+                            }
+
+                        </tbody >
+                    </table>
                 </div>
             </div>
 
