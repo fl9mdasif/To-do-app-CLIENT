@@ -13,7 +13,7 @@ const Update = () => {
     const { taskID } = useParams();
 
     useEffect(() => {
-        const url = `http://localhost:5000/tasks/${taskID}`;
+        const url = `https://thawing-beach-59024.herokuapp.com/tasks/${taskID}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -33,7 +33,7 @@ const Update = () => {
         console.log('tasklist', tasklist);
 
 
-        const url = `http://localhost:5000/tasks/${taskID}`;
+        const url = `https://thawing-beach-59024.herokuapp.com/tasks/${taskID}`;
 
 
         //put updateOne
@@ -60,11 +60,11 @@ const Update = () => {
     return (
 
         <div>
-            <h1>update : {taskID}</h1>
-            <p>{updateTask.taskDetails} h</p>
+            {/* <h1>update : {taskID}</h1>
+            <p>{updateTask.taskDetails} h</p> */}
             <div className="py-10 font-bold text-center text-primary sm:text-2xl md:text-4xl lg:text-5xl">Update User</div>
             <div className='flex  justify-evenly'>
-                <div className="flex justify-center">
+                <div className="flex text-text justify-center">
                     <DayPicker
                         mode="single"
                         selected={selected}

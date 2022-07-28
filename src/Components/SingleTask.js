@@ -33,7 +33,7 @@ const SingleTask = ({ task, index }) => {
     const updateTask = (id) => {
         const proceed = window.confirm('Are you sure to delete product');
         if (proceed) {
-            const url = `http://localhost:5000/tasks${id}`;
+            const url = `https://thawing-beach-59024.herokuapp.com/tasks${id}`;
             fetch(url)
                 .then(res => res.json())
                 .then(data => {

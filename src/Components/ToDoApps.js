@@ -30,7 +30,7 @@ const ToDoApps = () => {
             taskDetails: tasklist,
             taskDate: taskDate
         }
-        const url = `http://localhost:5000/tasks`;
+        const url = `https://thawing-beach-59024.herokuapp.com/tasks`;
         fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -55,18 +55,7 @@ const ToDoApps = () => {
 
     return (
         <div className="flex justify-evenly">
-            <div className=" ">
-                <h3 className="text-2xl font-bold text-head  text-center p-5">This is Calender </h3>
-                <div className="flex justify-center">
-                    <DayPicker
-                        mode="single"
-                        selected={selected}
-                        onSelect={setSelected}
-                        footer={footer}
-                    />
-                </div>
 
-            </div>
             <div>
                 <div className='my-2 py-2 flex h-auto justify-center '>
                     <div className="card w-96 bg-base-100 shadow-xl">
@@ -143,6 +132,18 @@ const ToDoApps = () => {
                         </tbody >
                     </table>
                 </div>
+            </div>
+            <div className=" ">
+                <h3 className="text-2xl font-bold text-head  text-center p-5">This is Calender </h3>
+                <div className="flex justify-center text-text">
+                    <DayPicker
+                        mode="single"
+                        selected={selected}
+                        onSelect={setSelected}
+                        footer={footer}
+                    />
+                </div>
+
             </div>
 
         </div>

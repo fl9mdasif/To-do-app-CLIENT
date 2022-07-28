@@ -16,9 +16,7 @@ const Navbar = () => {
             <li><Link to='/' href="#2">Home</Link></li>
             <li><Link to='/to-do-task' >To-Do</Link></li>
             <li><Link to='/completed-task' href="#2">Completed Task</Link></li>
-            <li><Link to='/calendar' href="#2">calendar</Link></li>
-            {/* <li><Link to='/login' href="#2">Login</Link></li>
-            <li><Link to='/signup' href="#2">Signup</Link></li> */}
+
 
 
 
@@ -36,7 +34,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar bg-base">
+            <div className="navbar bg-base text-text">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
