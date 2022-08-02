@@ -2,9 +2,10 @@
 import { useNavigate } from 'react-router-dom';
 import auth from '../firebase.config';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 
 
-const SingleTask = ({ task, index }) => {
+const SingleTask = ({ task, index, refetch }) => {
     const navigate = useNavigate()
     const [user] = useAuthState(auth);
     const userEmail = user.reloadUserInfo.email;
@@ -25,7 +26,7 @@ const SingleTask = ({ task, index }) => {
         }
         console.log(task)
 
-
+        //for completed task 
         const url = `https://thawing-beach-59024.herokuapp.com/completetasks`;
         fetch(url, {
             method: 'POST',
@@ -34,47 +35,39 @@ const SingleTask = ({ task, index }) => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
+                toast.success('tasks completed successfully')
                 deleteTask(id)
-
-                // toast('Product added to Dashboard Page')
-
+                refetch()
             })
         navigate('/completed-task')
     };
 
-
-
-
-
-
     const deleteTask = (id) => {
-        // const proceed = window.confirm('Are you sure to delete product');
-        // if (proceed) {
-        const url = `https://thawing-beach-59024.herokuapp.com/tasks/${id}`;
-        fetch(url, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data)
-                window.location.reload();
-
-                // allTasks(data)
-                // toast('product deleted from my order');
+        const proceed = window.confirm('Are you sure to delete product');
+        if (proceed) {
+            const url = `https://thawing-beach-59024.herokuapp.com/tasks/${id}`;
+            fetch(url, {
+                method: 'DELETE'
             })
-        // }
+                .then(res => res.json())
+                .then(data => {
+                    toast.success('tasks deleted successfully')
+
+                    // console.log(data)
+                    // window.location.reload();
+                    refetch()
+                })
+        }
     };
 
     const updateTask = (id) => {
-        const proceed = window.confirm('Are you sure to delete product');
+        const proceed = window.confirm('Are you sure to update product');
         if (proceed) {
             const url = `https://thawing-beach-59024.herokuapp.com/tasks${id}`;
             fetch(url)
                 .then(res => res.json())
                 .then(data => {
-                    // console.log(data)
-
+                    refetch()
                 })
 
             navigate(`/to-do-task/${id}`)

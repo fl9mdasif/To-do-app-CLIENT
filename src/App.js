@@ -12,6 +12,7 @@ import NotFound from "./Components/Shared/NotFound";
 import Footer from "./Components/Shared/Footer";
 import UpdateTodo from "./Components/UpdateTodo";
 import 'boxicons'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
       </Routes>
       <ToastContainer />
       <Footer />
+      {/* toast */}
+      <ToastContainer />
+
     </div>
   );
 }

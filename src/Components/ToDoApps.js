@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { ToastContainer } from 'react-toastify';
 import SingleTask from './SingleTask';
@@ -7,20 +7,30 @@ import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import auth from '../firebase.config';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from '@tanstack/react-query'
+
 
 
 const ToDoApps = () => {
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-
-    const [tasks, setTasks] = useState([]);
-    useEffect(() => {
-        fetch('https://thawing-beach-59024.herokuapp.com/tasks')
-            .then(res => res.json())
-            .then(results => setTasks(results))
-    }, []);
-
     const [user] = useAuthState(auth);
+    const [selected, setSelected] = useState(new Date());
+    // const [tasks, setTasks] = useState([]);
+
+    // useEffect(() => {
+    //     fetch('https://thawing-beach-59024.herokuapp.com/tasks')
+    //         .then(res => res.json())
+    //         .then(results => setTasks(results))
+    // }, []);
+
+    const { isLoading, error, data: tasks, refetch } = useQuery(['usersData'], () =>
+        fetch('https://thawing-beach-59024.herokuapp.com/tasks').then(res =>
+            res.json())
+    )
+    if (isLoading) return 'Loading...'
+    if (error) return 'An error has occurred: ' + error.message
+
     const userEmail = user.reloadUserInfo.email;
     // console.log(userEmail)
 
@@ -42,7 +52,7 @@ const ToDoApps = () => {
     const onSubmit = event => {
 
         const { tasklist, taskDate } = event;
-        console.log(event)
+        // console.log(event)
         reset();
 
         const task = {
@@ -59,12 +69,13 @@ const ToDoApps = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
-                window.location.reload();
+                // console.log(result)
+                // window.location.reload();
+                refetch()
             })
     }
 
-    const [selected, setSelected] = useState(new Date());
+
     let footer = <p>Please pick a day.</p>;
     let date = format(selected, 'PP')
     if (selected) {
@@ -151,6 +162,7 @@ const ToDoApps = () => {
                             {
                                 myTasks.map((task, index) =>
                                     <SingleTask
+                                        refetch={refetch}
                                         index={index}
                                         task={task}
                                         key={task._id}>

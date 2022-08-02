@@ -17,7 +17,7 @@ const Hero = () => {
                     <div class="max-w-md">
                         <h1 class="mb-5 sm:text-xl text-white md:text-2xl lg:text-5xl font-bold">Welcome to TO-DO </h1>
                         <p class="text-white mb-5">You can simply add your tasks by putting your data into the text field below.</p>
-                        <button onClick={onClick} class="btn btn-xs bg-base text-text">Get Started</button>
+                        <button onClick={onClick} class=" rounded-md bg-base px-5 py-3 text-text">Get Started</button>
                     </div>
                 </div>
             </div>

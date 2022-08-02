@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { format } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
+import { toast } from 'react-toastify';
 
 const Update = () => {
     const navigate = useNavigate()
@@ -46,7 +47,8 @@ const Update = () => {
         })
             .then((response) => response.json())
             .then((json) =>
-                console.log(json)
+                // console.log(json)
+                toast.success('tasks updated successfully')
             );
         navigate('/')
     }
