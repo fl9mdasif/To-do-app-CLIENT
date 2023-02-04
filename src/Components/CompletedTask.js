@@ -11,7 +11,7 @@ const CompletedTask = () => {
     const myTasks = [];
 
     const { isLoading, error, data: completedTasks, refetch } = useQuery(['usersData'], () =>
-        fetch('https://thawing-beach-59024.herokuapp.com/completetasks').then(res =>
+        fetch('https://to-do-server-gva2.onrender.com/completetasks').then(res =>
             res.json())
     )
     if (isLoading) return 'Loading...'
@@ -34,7 +34,7 @@ const CompletedTask = () => {
     const deleteUser = (id) => {
         const proceed = window.confirm('Are you sure to delete user');
         if (proceed) {
-            const url = `https://thawing-beach-59024.herokuapp.com/completetasks/${id}`;
+            const url = `https://to-do-server-gva2.onrender.com/completetasks/${id}`;
             console.log(url)
             fetch(url, {
                 method: 'DELETE'

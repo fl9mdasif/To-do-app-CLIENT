@@ -14,7 +14,7 @@ const Update = () => {
     const { taskID } = useParams();
 
     useEffect(() => {
-        const url = `https://thawing-beach-59024.herokuapp.com/tasks/${taskID}`;
+        const url = `https://to-do-server-gva2.onrender.com/tasks/${taskID}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -34,7 +34,7 @@ const Update = () => {
         console.log('tasklist', tasklist);
 
 
-        const url = `https://thawing-beach-59024.herokuapp.com/tasks/${taskID}`;
+        const url = `https://to-do-server-gva2.onrender.com/tasks/${taskID}`;
 
 
         //put updateOne

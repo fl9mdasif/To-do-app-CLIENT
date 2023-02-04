@@ -19,13 +19,13 @@ const ToDoApps = () => {
     // const [tasks, setTasks] = useState([]);
 
     // useEffect(() => {
-    //     fetch('https://thawing-beach-59024.herokuapp.com/tasks')
+    //     fetch('https://to-do-server-gva2.onrender.com/tasks')
     //         .then(res => res.json())
     //         .then(results => setTasks(results))
     // }, []);
 
     const { isLoading, error, data: tasks, refetch } = useQuery(['usersData'], () =>
-        fetch('https://thawing-beach-59024.herokuapp.com/tasks').then(res =>
+        fetch('https://to-do-server-gva2.onrender.com/tasks').then(res =>
             res.json())
     )
     if (isLoading) return 'Loading...'
@@ -61,7 +61,7 @@ const ToDoApps = () => {
             email: userEmail
 
         }
-        const url = `https://thawing-beach-59024.herokuapp.com/tasks`;
+        const url = `https://to-do-server-gva2.onrender.com/tasks`;
         fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -78,6 +78,7 @@ const ToDoApps = () => {
 
     let footer = <p>Please pick a day.</p>;
     let date = format(selected, 'PP')
+    // console.log(date);
     if (selected) {
         footer = <p>You picked {format(selected, 'PP')}.</p>;
     }
@@ -144,6 +145,7 @@ const ToDoApps = () => {
                     </div>
 
                 </div>
+
                 <h2 className='text-2xl font-bold text-head  text-center p-5'> Added Tasks</h2>
 
                 <div className="  ">

@@ -27,7 +27,7 @@ const SingleTask = ({ task, index, refetch }) => {
         console.log(task)
 
         //for completed task 
-        const url = `https://thawing-beach-59024.herokuapp.com/completetasks`;
+        const url = `https://to-do-server-gva2.onrender.com/completetasks`;
         fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -45,7 +45,7 @@ const SingleTask = ({ task, index, refetch }) => {
     const deleteTask = (id) => {
         const proceed = window.confirm('Are you sure to delete product');
         if (proceed) {
-            const url = `https://thawing-beach-59024.herokuapp.com/tasks/${id}`;
+            const url = `https://to-do-server-gva2.onrender.com/tasks/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -60,20 +60,16 @@ const SingleTask = ({ task, index, refetch }) => {
         }
     };
 
+
+    //update tasks details
     const updateTask = (id) => {
         const proceed = window.confirm('Are you sure to update product');
         if (proceed) {
-            const url = `https://thawing-beach-59024.herokuapp.com/tasks${id}`;
-            fetch(url)
-                .then(res => res.json())
-                .then(data => {
-                    refetch()
-                })
 
+            refetch()
             navigate(`/to-do-task/${id}`)
         }
     };
-
 
     return (
         <tr className="">
